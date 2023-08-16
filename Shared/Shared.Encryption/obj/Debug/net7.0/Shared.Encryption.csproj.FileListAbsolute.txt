@@ -1,0 +1,12 @@
+/Users/curtis/Documents/AnonymisedHubSpotIntegration/Shared/Shared.Encryption/bin/Debug/net7.0/Shared.Encryption.deps.json
+/Users/curtis/Documents/AnonymisedHubSpotIntegration/Shared/Shared.Encryption/bin/Debug/net7.0/Shared.Encryption.dll
+/Users/curtis/Documents/AnonymisedHubSpotIntegration/Shared/Shared.Encryption/bin/Debug/net7.0/Shared.Encryption.pdb
+/Users/curtis/Documents/AnonymisedHubSpotIntegration/Shared/Shared.Encryption/obj/Debug/net7.0/Shared.Encryption.csproj.AssemblyReference.cache
+/Users/curtis/Documents/AnonymisedHubSpotIntegration/Shared/Shared.Encryption/obj/Debug/net7.0/Shared.Encryption.GeneratedMSBuildEditorConfig.editorconfig
+/Users/curtis/Documents/AnonymisedHubSpotIntegration/Shared/Shared.Encryption/obj/Debug/net7.0/Shared.Encryption.AssemblyInfoInputs.cache
+/Users/curtis/Documents/AnonymisedHubSpotIntegration/Shared/Shared.Encryption/obj/Debug/net7.0/Shared.Encryption.AssemblyInfo.cs
+/Users/curtis/Documents/AnonymisedHubSpotIntegration/Shared/Shared.Encryption/obj/Debug/net7.0/Shared.Encryption.csproj.CoreCompileInputs.cache
+/Users/curtis/Documents/AnonymisedHubSpotIntegration/Shared/Shared.Encryption/obj/Debug/net7.0/Shared.Encryption.dll
+/Users/curtis/Documents/AnonymisedHubSpotIntegration/Shared/Shared.Encryption/obj/Debug/net7.0/refint/Shared.Encryption.dll
+/Users/curtis/Documents/AnonymisedHubSpotIntegration/Shared/Shared.Encryption/obj/Debug/net7.0/Shared.Encryption.pdb
+/Users/curtis/Documents/AnonymisedHubSpotIntegration/Shared/Shared.Encryption/obj/Debug/net7.0/ref/Shared.Encryption.dll

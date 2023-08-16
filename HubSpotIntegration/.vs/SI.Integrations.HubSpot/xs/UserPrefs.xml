@@ -1,0 +1,39 @@
+﻿<Properties>
+  <DisabledProjects>
+    <String>SI.Integrations.HubSpot.ApiSync/HubSpotIntegration.ApiSync.csproj</String>
+    <String>SI.Integrations.HubSpot.Definitions/HubSpotIntegration.Definitions.csproj</String>
+    <String>SI.Integrations.HubSpot.DownSync/HubSpotIntegration.DownSync.csproj</String>
+  </DisabledProjects>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints />
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="SI.Integrations.HubSpot" expanded="True" selected="True">
+            <Node name="SI.Shared" expanded="True">
+              <Node name="Shared.Common">
+                <Node name="Attributes" expanded="True" />
+              </Node>
+              <Node name="Shared.Helper">
+                <Node name="Dependencies" expanded="True">
+                  <Node name="ProjectDependencies" expanded="True" />
+                </Node>
+              </Node>
+              <Node name="Shared.Model" expanded="True" />
+              <Node name="Shared.MongoDB" expanded="True" />
+            </Node>
+            <Node name="HubSpotIntegration.ApiSync" expanded="True">
+              <Node name="Dependencies" expanded="True" />
+            </Node>
+            <Node name="HubSpotIntegration.Definitions">
+              <Node name="Entity" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MultiItemStartupConfigurations />
+</Properties>

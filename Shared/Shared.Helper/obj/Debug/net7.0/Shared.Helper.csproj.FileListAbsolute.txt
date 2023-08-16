@@ -1,0 +1,17 @@
+/Users/curtis/Documents/AnonymisedHubSpotIntegration/Shared/Shared.Helper/bin/Debug/net7.0/Shared.Helper.deps.json
+/Users/curtis/Documents/AnonymisedHubSpotIntegration/Shared/Shared.Helper/bin/Debug/net7.0/Shared.Helper.dll
+/Users/curtis/Documents/AnonymisedHubSpotIntegration/Shared/Shared.Helper/bin/Debug/net7.0/Shared.Helper.pdb
+/Users/curtis/Documents/AnonymisedHubSpotIntegration/Shared/Shared.Helper/bin/Debug/net7.0/Shared.Model.dll
+/Users/curtis/Documents/AnonymisedHubSpotIntegration/Shared/Shared.Helper/bin/Debug/net7.0/Shared.MongoDB.dll
+/Users/curtis/Documents/AnonymisedHubSpotIntegration/Shared/Shared.Helper/bin/Debug/net7.0/Shared.Model.pdb
+/Users/curtis/Documents/AnonymisedHubSpotIntegration/Shared/Shared.Helper/bin/Debug/net7.0/Shared.MongoDB.pdb
+/Users/curtis/Documents/AnonymisedHubSpotIntegration/Shared/Shared.Helper/obj/Debug/net7.0/Shared.Helper.csproj.AssemblyReference.cache
+/Users/curtis/Documents/AnonymisedHubSpotIntegration/Shared/Shared.Helper/obj/Debug/net7.0/Shared.Helper.GeneratedMSBuildEditorConfig.editorconfig
+/Users/curtis/Documents/AnonymisedHubSpotIntegration/Shared/Shared.Helper/obj/Debug/net7.0/Shared.Helper.AssemblyInfoInputs.cache
+/Users/curtis/Documents/AnonymisedHubSpotIntegration/Shared/Shared.Helper/obj/Debug/net7.0/Shared.Helper.AssemblyInfo.cs
+/Users/curtis/Documents/AnonymisedHubSpotIntegration/Shared/Shared.Helper/obj/Debug/net7.0/Shared.Helper.csproj.CoreCompileInputs.cache
+/Users/curtis/Documents/AnonymisedHubSpotIntegration/Shared/Shared.Helper/obj/Debug/net7.0/Shared.Helper.csproj.CopyComplete
+/Users/curtis/Documents/AnonymisedHubSpotIntegration/Shared/Shared.Helper/obj/Debug/net7.0/Shared.Helper.dll
+/Users/curtis/Documents/AnonymisedHubSpotIntegration/Shared/Shared.Helper/obj/Debug/net7.0/refint/Shared.Helper.dll
+/Users/curtis/Documents/AnonymisedHubSpotIntegration/Shared/Shared.Helper/obj/Debug/net7.0/Shared.Helper.pdb
+/Users/curtis/Documents/AnonymisedHubSpotIntegration/Shared/Shared.Helper/obj/Debug/net7.0/ref/Shared.Helper.dll

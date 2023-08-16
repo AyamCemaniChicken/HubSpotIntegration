@@ -1,0 +1,12 @@
+/Users/curtis/Documents/AnonymisedHubSpotIntegration/Shared/Shared.Model/bin/Debug/net7.0/Shared.Model.deps.json
+/Users/curtis/Documents/AnonymisedHubSpotIntegration/Shared/Shared.Model/bin/Debug/net7.0/Shared.Model.dll
+/Users/curtis/Documents/AnonymisedHubSpotIntegration/Shared/Shared.Model/bin/Debug/net7.0/Shared.Model.pdb
+/Users/curtis/Documents/AnonymisedHubSpotIntegration/Shared/Shared.Model/obj/Debug/net7.0/Shared.Model.csproj.AssemblyReference.cache
+/Users/curtis/Documents/AnonymisedHubSpotIntegration/Shared/Shared.Model/obj/Debug/net7.0/Shared.Model.GeneratedMSBuildEditorConfig.editorconfig
+/Users/curtis/Documents/AnonymisedHubSpotIntegration/Shared/Shared.Model/obj/Debug/net7.0/Shared.Model.AssemblyInfoInputs.cache
+/Users/curtis/Documents/AnonymisedHubSpotIntegration/Shared/Shared.Model/obj/Debug/net7.0/Shared.Model.AssemblyInfo.cs
+/Users/curtis/Documents/AnonymisedHubSpotIntegration/Shared/Shared.Model/obj/Debug/net7.0/Shared.Model.csproj.CoreCompileInputs.cache
+/Users/curtis/Documents/AnonymisedHubSpotIntegration/Shared/Shared.Model/obj/Debug/net7.0/Shared.Model.dll
+/Users/curtis/Documents/AnonymisedHubSpotIntegration/Shared/Shared.Model/obj/Debug/net7.0/refint/Shared.Model.dll
+/Users/curtis/Documents/AnonymisedHubSpotIntegration/Shared/Shared.Model/obj/Debug/net7.0/Shared.Model.pdb
+/Users/curtis/Documents/AnonymisedHubSpotIntegration/Shared/Shared.Model/obj/Debug/net7.0/ref/Shared.Model.dll
