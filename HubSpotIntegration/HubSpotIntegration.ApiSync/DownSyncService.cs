@@ -411,6 +411,9 @@ namespace HubSpotIntegration.ApiSync
                         {
                             if (!string.IsNullOrWhiteSpace(item.TypeId.ToString()))
                             {
+                                if (item.Label == null || item.Label == "")
+                                    item.Label = $"{associationKey},{associations[associationKey]}";
+
                                 var existingAssociation = dbClient.GetAll<Association>("TypeId", item.TypeId).Result.Where(x => x.Label == item.Label)?.FirstOrDefault();
 
                                 if (existingAssociation != null)
@@ -428,7 +431,7 @@ namespace HubSpotIntegration.ApiSync
                                 else
                                 {
                                     try
-                                    {
+                                    { 
                                         item.TypeId = item.TypeId;
                                         await dbClient.InsertOneAsync<Association>(item);
                                     }
