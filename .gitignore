@@ -5,3 +5,5 @@
 **/vs
 **/vscode
 **/.vscode
+**/.editorconfig
+**/launchSettings.json
