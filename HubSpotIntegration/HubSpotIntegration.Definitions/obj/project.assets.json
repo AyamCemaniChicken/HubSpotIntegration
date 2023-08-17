@@ -1133,6 +1133,7 @@
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Newtonsoft.Json": "13.0.3",
+          "Shared.Common": "1.0.0",
           "Shared.Model": "1.0.0",
           "Shared.MongoDB": "1.0.0",
           "System.Net.Http": "4.3.4"
@@ -3783,39 +3784,41 @@
     ]
   },
   "packageFolders": {
-    "/Users/curtis/.nuget/packages/": {}
+    "C:\\Users\\CurtisHewlett\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/curtis/Documents/AnonymisedHubSpotIntegration/HubSpotIntegration/HubSpotIntegration.Definitions/HubSpotIntegration.Definitions.csproj",
+      "projectUniqueName": "C:\\Users\\CurtisHewlett\\Downloads\\HubSpotIntegration-main\\HubSpotIntegration\\HubSpotIntegration.Definitions\\HubSpotIntegration.Definitions.csproj",
       "projectName": "HubSpotIntegration.Definitions",
-      "projectPath": "/Users/curtis/Documents/AnonymisedHubSpotIntegration/HubSpotIntegration/HubSpotIntegration.Definitions/HubSpotIntegration.Definitions.csproj",
-      "packagesPath": "/Users/curtis/.nuget/packages/",
-      "outputPath": "/Users/curtis/Documents/AnonymisedHubSpotIntegration/HubSpotIntegration/HubSpotIntegration.Definitions/obj/",
+      "projectPath": "C:\\Users\\CurtisHewlett\\Downloads\\HubSpotIntegration-main\\HubSpotIntegration\\HubSpotIntegration.Definitions\\HubSpotIntegration.Definitions.csproj",
+      "packagesPath": "C:\\Users\\CurtisHewlett\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\CurtisHewlett\\Downloads\\HubSpotIntegration-main\\HubSpotIntegration\\HubSpotIntegration.Definitions\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/curtis/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\CurtisHewlett\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
-        "/usr/local/share/dotnet/library-packs": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "/Users/curtis/Documents/AnonymisedHubSpotIntegration/Shared/Shared.Common/Shared.Common.csproj": {
-              "projectPath": "/Users/curtis/Documents/AnonymisedHubSpotIntegration/Shared/Shared.Common/Shared.Common.csproj"
+            "C:\\Users\\CurtisHewlett\\Downloads\\HubSpotIntegration-main\\Shared\\Shared.Common\\Shared.Common.csproj": {
+              "projectPath": "C:\\Users\\CurtisHewlett\\Downloads\\HubSpotIntegration-main\\Shared\\Shared.Common\\Shared.Common.csproj"
             },
-            "/Users/curtis/Documents/AnonymisedHubSpotIntegration/Shared/Shared.Helper/Shared.Helper.csproj": {
-              "projectPath": "/Users/curtis/Documents/AnonymisedHubSpotIntegration/Shared/Shared.Helper/Shared.Helper.csproj"
+            "C:\\Users\\CurtisHewlett\\Downloads\\HubSpotIntegration-main\\Shared\\Shared.Helper\\Shared.Helper.csproj": {
+              "projectPath": "C:\\Users\\CurtisHewlett\\Downloads\\HubSpotIntegration-main\\Shared\\Shared.Helper\\Shared.Helper.csproj"
             },
-            "/Users/curtis/Documents/AnonymisedHubSpotIntegration/Shared/Shared.Model/Shared.Model.csproj": {
-              "projectPath": "/Users/curtis/Documents/AnonymisedHubSpotIntegration/Shared/Shared.Model/Shared.Model.csproj"
+            "C:\\Users\\CurtisHewlett\\Downloads\\HubSpotIntegration-main\\Shared\\Shared.Model\\Shared.Model.csproj": {
+              "projectPath": "C:\\Users\\CurtisHewlett\\Downloads\\HubSpotIntegration-main\\Shared\\Shared.Model\\Shared.Model.csproj"
             }
           }
         }
@@ -3855,7 +3858,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.306/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }

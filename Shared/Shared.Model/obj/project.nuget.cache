@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "EiYUpSY8oaKuvshWL15NpHDEk45H05vwboQhSSnf6tV6LFXu6R+tFXv1i8J3HAOMRTbBnsUqPGjI2yQs2/rTNg==",
+  "dgSpecHash": "381BDDqvBmSqs7qa1ST0JlT5g90nta7cvUd6RDIVOib4zoICrQJ+8uWP4BZzZcytarVczDXLXMZxsd7O0xSmFw==",
   "success": true,
-  "projectFilePath": "/Users/curtis/Documents/AnonymisedHubSpotIntegration/Shared/Shared.Model/Shared.Model.csproj",
+  "projectFilePath": "C:\\Users\\CurtisHewlett\\Downloads\\HubSpotIntegration-main\\Shared\\Shared.Model\\Shared.Model.csproj",
   "expectedPackageFiles": [
-    "/Users/curtis/.nuget/packages/commandlineparser/2.9.1/commandlineparser.2.9.1.nupkg.sha512",
-    "/Users/curtis/.nuget/packages/mongodb.bson/2.21.0/mongodb.bson.2.21.0.nupkg.sha512",
-    "/Users/curtis/.nuget/packages/system.memory/4.5.5/system.memory.4.5.5.nupkg.sha512",
-    "/Users/curtis/.nuget/packages/system.runtime.compilerservices.unsafe/5.0.0/system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
+    "C:\\Users\\CurtisHewlett\\.nuget\\packages\\commandlineparser\\2.9.1\\commandlineparser.2.9.1.nupkg.sha512",
+    "C:\\Users\\CurtisHewlett\\.nuget\\packages\\mongodb.bson\\2.21.0\\mongodb.bson.2.21.0.nupkg.sha512",
+    "C:\\Users\\CurtisHewlett\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
+    "C:\\Users\\CurtisHewlett\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }

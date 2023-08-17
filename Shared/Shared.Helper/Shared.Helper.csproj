@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SI.Common\Shared.Common.csproj" />
+    <ProjectReference Include="..\Shared.Common\Shared.Common.csproj" />
     <ProjectReference Include="..\Shared.Model\Shared.Model.csproj" />
     <ProjectReference Include="..\Shared.MongoDB\Shared.MongoDB.csproj" />
   </ItemGroup>

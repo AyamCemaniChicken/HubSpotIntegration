@@ -80,7 +80,7 @@ namespace HubSpotIntegration.ApiSync
 
                                 try
                                 {
-                                    await dbClient.UpsertOneAsync<Contact>(existingContact, new MongoDB.Bson.ObjectId(existingId));
+                                    await dbClient.UpsertOneAsync<Contact>(existingContact, existingId);
                                 }
                                 catch (Exception ex){ }
                             }
