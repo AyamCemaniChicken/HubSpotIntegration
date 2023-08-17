@@ -15,6 +15,5 @@ Possible Endpoint Values:
     4 Line Items
     5 Associations
 
-**NOTE**
-Currently, the connection string for MongoDB client is hardcoded. Replace the placeholder string in Shared/Shared.MongoDB/DBClient.cs - Line 13 with your atlas connection string.
-    
+When running for the first time you will be prompted for your MongoDB 
+connection string.     
