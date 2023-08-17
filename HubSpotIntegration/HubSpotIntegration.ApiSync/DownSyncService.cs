@@ -5,6 +5,7 @@ using Shared.Model;
 using HubSpotIntegration.Definitions.Entity;
 using HubSpotIntegration.Definitions.Response;
 using Shared.Common.Attributes;
+using System.Xml.Serialization;
 
 namespace HubSpotIntegration.ApiSync
 {
@@ -16,17 +17,75 @@ namespace HubSpotIntegration.ApiSync
 
         public HubSpotApiHelper apiHelper { get; set; }
         public DBClient dbClient { get; set; }
+        private Config config { get; set; }
 
         // Initialize
         public void init(string accessKey, string startUrl, string database)
         {
+            config = GetConfig();
+            while (config == null)
+            {
+                config = CreateConfig();
+            }
+
+            var connectionString = config.ConnectionString;
+
             AccessKey = accessKey;
             StartUrl = startUrl;
 
             apiHelper = new HubSpotApiHelper(AccessKey);
             apiHelper.BaseUrl = startUrl;
 
-            dbClient = new DBClient(database);
+            dbClient = new DBClient(database, connectionString);
+        }
+
+        public Config CreateConfig()
+        {
+        Start:
+            Console.WriteLine("Enter your MongoDB connection string:");
+            var connectionString = Console.ReadLine();
+            goto WriteConfig;
+
+        WriteConfig:
+            if (connectionString == null)
+                goto Start;
+            var ConfigName = "config.xml";
+            if (!File.Exists(ConfigName))
+            {
+                using (FileStream fs = new FileStream(ConfigName, FileMode.Create))
+                {
+                    XmlSerializer xs = new XmlSerializer(typeof(Config));
+                    Config sxml = new Config()
+                    {
+                        ConnectionString = connectionString
+                    };
+                    xs.Serialize(fs, sxml);
+                    return sxml;
+                }
+            }
+            else
+            {
+                var config = GetConfig();
+                if (config != null)
+                    return config;
+                else goto Start;
+            }
+        }
+
+        public Config GetConfig()
+        {
+            var ConfigName = "config.xml";
+            if (File.Exists(ConfigName))
+            {
+                using (FileStream fs = new FileStream(ConfigName, FileMode.Open))
+                {
+                    XmlSerializer xs = new XmlSerializer(typeof(Config));
+                    Config sc = (Config)xs.Deserialize(fs);
+                    return sc;
+                }
+            }
+
+            return null;
         }
 
         public async Task Run(List<string> endpoints, Dictionary<string, string> associations)

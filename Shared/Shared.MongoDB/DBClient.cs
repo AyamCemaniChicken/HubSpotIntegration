@@ -10,10 +10,11 @@ namespace Shared.MongoDB
         protected IMongoClient _client;
         protected IMongoDatabase _database;
         // Connection string
-        protected readonly static string connectionUri = "ConnectionString";
+        private static string connectionUri { get; set; }
 
-        public DBClient(string db)
+        public DBClient(string db, string connectionString)
         {
+            connectionUri = connectionString;
             _client = new MongoClient(connectionUri);
             _database = _client.GetDatabase(db);
         }

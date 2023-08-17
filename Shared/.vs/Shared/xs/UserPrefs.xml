@@ -4,11 +4,14 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Shared.MongoDB/DBClient.cs">
+    <Files>
+      <File FileName="Shared.MongoDB/DBClient.cs" Line="19" Column="10" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Shared" selected="True" />
+          <Node name="Shared" expanded="True" />
         </State>
       </Pad>
     </Pads>

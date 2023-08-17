@@ -43,7 +43,7 @@ namespace HubSpotIntegration.DownSync
                     Endpoints.Add(endpoint.ToString());
                 }
             }
-            else if (Params.Endpoint.ToString() == "")
+            else if (Params.Endpoint.ToString() == "" || Params.Endpoint == 0)
             {
                 foreach(var prop in System.Enum.GetValues(typeof(Enum.Endpoints)))
                 {
