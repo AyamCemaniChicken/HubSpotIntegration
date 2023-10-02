@@ -1,8 +1,4 @@
-using System;
 using CommandLine;
-using System.Collections.Generic;
-using System.Text;
-
 namespace Shared.Model
 {
     public class CLIParams<T> where T: Enum

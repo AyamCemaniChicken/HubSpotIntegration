@@ -1,5 +1,4 @@
-﻿using System;
-using MongoDB.Driver;
+﻿using MongoDB.Driver;
 using CommandLine;
 using Shared.Model;
 using HubSpotIntegration.DownSync.Enum;

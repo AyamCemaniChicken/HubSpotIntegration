@@ -1,8 +1,6 @@
-using System;
+
 using System.Text.Json.Serialization;
 using Shared.Common.Attributes;
-using MongoDB.Driver;
-using MongoDB.Bson;
 
 namespace HubSpotIntegration.Definitions.Entity
 {

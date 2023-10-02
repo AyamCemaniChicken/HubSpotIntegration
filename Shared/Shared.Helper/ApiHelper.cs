@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Text;
-using Shared.MongoDB;
+﻿
 using Shared.Model;
 using System.Text.Json;
 using System.Net.Http.Headers;
@@ -66,18 +61,21 @@ namespace Shared.Helper
 
                 var apiRes = await ApiClient.SendAsync(req);
 
-                apiRes.EnsureSuccessStatusCode();
-
                 string body = await apiRes.Content.ReadAsStringAsync();
 
                 response = new ApiResponse()
                 {
-                    ResponseBody = body 
+                    ResponseBody = body,
+                    Status = apiRes.StatusCode
                 };
 
             }
             catch (Exception ex)
             {
+                response = new ApiResponse()
+                {
+                    Status = System.Net.HttpStatusCode.InternalServerError
+                };
             }
 
             return response;

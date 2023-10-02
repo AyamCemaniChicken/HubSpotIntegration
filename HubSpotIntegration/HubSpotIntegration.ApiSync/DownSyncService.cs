@@ -1,4 +1,4 @@
-﻿using System;
+﻿
 using HubSpotIntegration.Definitions;
 using Shared.MongoDB;
 using Shared.Model;
@@ -6,6 +6,7 @@ using HubSpotIntegration.Definitions.Entity;
 using HubSpotIntegration.Definitions.Response;
 using Shared.Common.Attributes;
 using System.Xml.Serialization;
+using System.Diagnostics;
 
 namespace HubSpotIntegration.ApiSync
 {
@@ -115,20 +116,24 @@ namespace HubSpotIntegration.ApiSync
 
             if (!string.IsNullOrWhiteSpace(after))
                 queryParams += $"&after={after}";
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Syncing Contacts");
             
             while (running)
             {
-
                 var endpoint = typeof(Contact).GetCustomAttributes(typeof(EndpointAttribute), true).FirstOrDefault() as EndpointAttribute;
                 var response = await apiHelper.GetObjectResponse<Response<Contact>>($"{endpoint.Url}{queryParams}");
 
-                if (response.Results.Count > 0)
+                if (response != null && response.Results.Count > 0)
                 {
                     foreach (var item in response.Results)
                     {
                         if (!string.IsNullOrWhiteSpace(item.Properties.ToString()))
                         {
-                            var existingContact = await dbClient.Get<Contact>("Id", item.Properties.Id);
+                            var sw = new Stopwatch();
+                            sw.Start();
+                            var existingContact = await dbClient.Get<Contact>("Id", item.Id);
 
                             if (existingContact != null)
                             {
@@ -140,8 +145,16 @@ namespace HubSpotIntegration.ApiSync
                                 try
                                 {
                                     await dbClient.UpsertOneAsync<Contact>(existingContact, existingId);
+                                    sw.Stop();
+                                    Console.ForegroundColor = ConsoleColor.Yellow;
+                                    Console.WriteLine($"Contact {item.Id}\n\rUpdated - {sw.ElapsedMilliseconds}ms");
                                 }
-                                catch (Exception ex){ }
+                                catch (Exception ex)
+                                {
+                                    sw.Stop();
+                                    Console.ForegroundColor = ConsoleColor.Red;
+                                    Console.WriteLine($"Contact {item.Id}\n\rError - {sw.ElapsedMilliseconds}ms\n\r{ex.Message}");
+                                }
                             }
                             else
                             {
@@ -149,9 +162,18 @@ namespace HubSpotIntegration.ApiSync
                                 {
                                     item.Properties.Id = item.Id;
                                     await dbClient.InsertOneAsync<Contact>(item.Properties);
+                                    sw.Stop();
+                                    Console.ForegroundColor = ConsoleColor.Green;
+                                    Console.WriteLine($"Contact {item.Id}\n\rAdded - {sw.ElapsedMilliseconds}ms");
                                 }
-                                catch (Exception ex){ }
+                                catch (Exception ex)
+                                {
+                                    sw.Stop();
+                                    Console.ForegroundColor = ConsoleColor.Red;
+                                    Console.WriteLine($"Contact {item.Id}\n\rError - {sw.ElapsedMilliseconds}ms\n\r{ex.Message}");
+                                }
                             }
+                            Console.ForegroundColor = ConsoleColor.White;
                         }
                     }
 
@@ -188,14 +210,16 @@ namespace HubSpotIntegration.ApiSync
                 var endpoint = typeof(Product).GetCustomAttributes(typeof(EndpointAttribute), true).FirstOrDefault() as EndpointAttribute;
                 var response = await apiHelper.GetObjectResponse<Response<Product>>($"{endpoint.Url}{queryParams}");
 
-                if (response.Results.Count > 0)
+                if (response != null && response.Results.Count > 0)
                 {
                     foreach (var item in response.Results)
                     {
+                        var sw = new Stopwatch();
+                        sw.Start();
                         if (!string.IsNullOrWhiteSpace(item.Properties.ToString()))
                         {
                             item.Properties.Associations = item.Associations;
-                            var existingProduct = await dbClient.Get<Product>("Id", item.Properties.Id);
+                            var existingProduct = await dbClient.Get<Product>("Id", item.Id);
 
                             if (existingProduct != null)
                             {
@@ -206,8 +230,16 @@ namespace HubSpotIntegration.ApiSync
                                 try
                                 {
                                     await dbClient.UpsertOneAsync<Product>(existingProduct, new MongoDB.Bson.ObjectId(existingId));
+                                    sw.Stop();
+                                    Console.ForegroundColor = ConsoleColor.Yellow;
+                                    Console.WriteLine($"Product {item.Id}\n\rUpdated - {sw.ElapsedMilliseconds}ms");
                                 }
-                                catch (Exception ex){ }
+                                catch (Exception ex)
+                                {
+                                    sw.Stop();
+                                    Console.ForegroundColor = ConsoleColor.Red;
+                                    Console.WriteLine($"Product {item.Id}\n\rError - {sw.ElapsedMilliseconds}ms\n\r{ex.Message}");
+                                }
                             }
                             else
                             {
@@ -215,9 +247,18 @@ namespace HubSpotIntegration.ApiSync
                                 {
                                     item.Properties.Id = item.Id;
                                     await dbClient.InsertOneAsync<Product>(item.Properties);
+                                    sw.Stop();
+                                    Console.ForegroundColor = ConsoleColor.Green;
+                                    Console.WriteLine($"Product {item.Id}\n\rAdded - {sw.ElapsedMilliseconds}ms");
                                 }
-                                catch (Exception ex){ }
+                                catch (Exception ex)
+                                {
+                                    sw.Stop();
+                                    Console.ForegroundColor = ConsoleColor.Red;
+                                    Console.WriteLine($"Product {item.Id}\n\rError - {sw.ElapsedMilliseconds}ms\n\r{ex.Message}");
+                                }
                             }
+                            Console.ForegroundColor = ConsoleColor.White;
                         }
                     }
 
@@ -269,14 +310,16 @@ namespace HubSpotIntegration.ApiSync
                 var endpoint = typeof(Deal).GetCustomAttributes(typeof(EndpointAttribute), true).FirstOrDefault() as EndpointAttribute;
                 var response = await apiHelper.GetObjectResponse<Response<Deal>>($"{endpoint.Url}{queryParams}{associationValues}");
 
-                if (response.Results.Count > 0)
+                if (response != null && response.Results.Count > 0)
                 {
                     foreach (var item in response.Results)
                     {
+                        var sw = new Stopwatch();
+                        sw.Start();
                         if (!string.IsNullOrWhiteSpace(item.Properties.ToString()))
                         {
                             item.Properties.Associations = item.Associations;
-                            var existingDeal = await dbClient.Get<Deal>("Id", item.Properties.Id);
+                            var existingDeal = await dbClient.Get<Deal>("Id", item.Id);
 
                             if (existingDeal != null)
                             {
@@ -287,8 +330,16 @@ namespace HubSpotIntegration.ApiSync
                                 try
                                 {
                                     await dbClient.UpsertOneAsync<Deal>(existingDeal, new MongoDB.Bson.ObjectId(existingId));
+                                    sw.Stop();
+                                    Console.ForegroundColor = ConsoleColor.Yellow;
+                                    Console.WriteLine($"Deal {item.Id}\n\rUpdated - {sw.ElapsedMilliseconds}ms");
                                 }
-                                catch (Exception ex){ }
+                                catch (Exception ex)
+                                {
+                                    sw.Stop();
+                                    Console.ForegroundColor = ConsoleColor.Red;
+                                    Console.WriteLine($"Deal {item.Id}\n\rError - {sw.ElapsedMilliseconds}ms\n\r{ex.Message}");
+                                }
                             }
                             else
                             {
@@ -296,9 +347,18 @@ namespace HubSpotIntegration.ApiSync
                                 {
                                     item.Properties.Id = item.Id;
                                     await dbClient.InsertOneAsync<Deal>(item.Properties);
+                                    sw.Stop();
+                                    Console.ForegroundColor = ConsoleColor.Green;
+                                    Console.WriteLine($"Deal {item.Id}\n\rAdded - {sw.ElapsedMilliseconds}ms");
                                 }
-                                catch (Exception ex){ }
+                                catch (Exception ex)
+                                {
+                                    sw.Stop();
+                                    Console.ForegroundColor = ConsoleColor.Red;
+                                    Console.WriteLine($"Deal {item.Id}\n\rError - {sw.ElapsedMilliseconds}ms\n\r{ex.Message}");
+                                }
                             }
+                            Console.ForegroundColor = ConsoleColor.White;
                         }
                     }
 
@@ -339,10 +399,12 @@ namespace HubSpotIntegration.ApiSync
                 {
                     foreach (var item in response.Results)
                     {
+                        var sw = new Stopwatch();
+                        sw.Start();
                         if (!string.IsNullOrWhiteSpace(item.Properties.ToString()))
                         {
                             item.Properties.Associations = item.Associations;
-                            var existingLineItem = await dbClient.Get<LineItem>("Id", item.Properties.Id);
+                            var existingLineItem = await dbClient.Get<LineItem>("Id", item.Id);
 
                             if (existingLineItem != null)
                             {
@@ -353,8 +415,16 @@ namespace HubSpotIntegration.ApiSync
                                 try
                                 {
                                     await dbClient.UpsertOneAsync<LineItem>(existingLineItem, new MongoDB.Bson.ObjectId(existingId));
+                                    sw.Stop();
+                                    Console.ForegroundColor = ConsoleColor.Yellow;
+                                    Console.WriteLine($"Line Item {item.Id}\n\rUpdated - {sw.ElapsedMilliseconds}ms");
                                 }
-                                catch (Exception ex){ }
+                                catch (Exception ex)
+                                {
+                                    sw.Stop();
+                                    Console.ForegroundColor = ConsoleColor.Red;
+                                    Console.WriteLine($"Line Item {item.Id}\n\rError - {sw.ElapsedMilliseconds}ms\n\r{ex.Message}");
+                                }
                             }
                             else
                             {
@@ -362,9 +432,18 @@ namespace HubSpotIntegration.ApiSync
                                 {
                                     item.Properties.Id = item.Id;
                                     await dbClient.InsertOneAsync<LineItem>(item.Properties);
+                                    sw.Stop();
+                                    Console.ForegroundColor = ConsoleColor.Green;
+                                    Console.WriteLine($"Line Item {item.Id}\n\rAdded - {sw.ElapsedMilliseconds}ms");
                                 }
-                                catch (Exception ex){ }
+                                catch (Exception ex)
+                                {
+                                    sw.Stop();
+                                    Console.ForegroundColor = ConsoleColor.Red;
+                                    Console.WriteLine($"Line Item {item.Id}\n\rError - {sw.ElapsedMilliseconds}ms\n\r{ex.Message}");
+                                }
                             }
+                            Console.ForegroundColor = ConsoleColor.White;
                         }
                     }
 
@@ -409,6 +488,8 @@ namespace HubSpotIntegration.ApiSync
                     {
                         foreach (var item in response.Results)
                         {
+                            var sw = new Stopwatch();
+                            sw.Start();
                             if (!string.IsNullOrWhiteSpace(item.TypeId.ToString()))
                             {
                                 if (item.Label == null || item.Label == "")
@@ -425,8 +506,16 @@ namespace HubSpotIntegration.ApiSync
                                     try
                                     {
                                         await dbClient.UpsertOneAsync<Association>(existingAssociation, new MongoDB.Bson.ObjectId(existingId));
+                                        sw.Stop();
+                                        Console.ForegroundColor = ConsoleColor.Yellow;
+                                        Console.WriteLine($"Association {item.Id}\n\rUpdated - {sw.ElapsedMilliseconds}ms");
                                     }
-                                    catch (Exception ex){ }
+                                    catch (Exception ex)
+                                    {
+                                        sw.Stop();
+                                        Console.ForegroundColor = ConsoleColor.Red;
+                                        Console.WriteLine($"Association {item.Id}\n\rError - {sw.ElapsedMilliseconds}ms\n\r{ex.Message}");
+                                    }
                                 }
                                 else
                                 {
@@ -434,9 +523,18 @@ namespace HubSpotIntegration.ApiSync
                                     { 
                                         item.TypeId = item.TypeId;
                                         await dbClient.InsertOneAsync<Association>(item);
+                                        sw.Stop();
+                                        Console.ForegroundColor = ConsoleColor.Green;
+                                        Console.WriteLine($"Association {item.Id}\n\rAdded - {sw.ElapsedMilliseconds}ms");
                                     }
-                                    catch (Exception ex){ }
+                                    catch (Exception ex)
+                                    {
+                                        sw.Stop();
+                                        Console.ForegroundColor = ConsoleColor.Red;
+                                        Console.WriteLine($"Association {item.Id}\n\rError - {sw.ElapsedMilliseconds}ms\n\r{ex.Message}");
+                                    }
                                 }
+                                Console.ForegroundColor = ConsoleColor.White;
                             }
                         }
 

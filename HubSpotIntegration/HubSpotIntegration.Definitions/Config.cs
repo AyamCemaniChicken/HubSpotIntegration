@@ -1,4 +1,4 @@
-﻿using System;
+﻿
 namespace HubSpotIntegration.Definitions
 {
 	public class Config

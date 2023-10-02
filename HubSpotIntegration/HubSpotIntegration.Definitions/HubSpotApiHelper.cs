@@ -1,6 +1,4 @@
-﻿using System;
-using Shared.Helper;
-using Shared.Model;
+﻿using Shared.Helper;
 
 namespace HubSpotIntegration.Definitions
 {

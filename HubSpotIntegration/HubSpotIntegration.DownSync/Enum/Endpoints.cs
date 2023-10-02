@@ -1,5 +1,4 @@
-﻿using System;
-
+﻿
 namespace HubSpotIntegration.DownSync.Enum
 {
 	public enum Endpoints

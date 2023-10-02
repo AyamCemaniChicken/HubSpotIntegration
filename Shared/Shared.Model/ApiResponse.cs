@@ -1,6 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
+using System.Net;
+
 
 namespace Shared.Helper
 {
@@ -8,5 +8,6 @@ namespace Shared.Helper
     {
         public Dictionary<string, string>? ResponseHeaders { get; set; }
         public string ResponseBody { get; set; }
+        public HttpStatusCode Status { get; set; }
     }
 }
